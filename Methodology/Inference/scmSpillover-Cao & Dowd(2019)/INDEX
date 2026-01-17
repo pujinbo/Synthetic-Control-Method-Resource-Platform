@@ -1,0 +1,14 @@
+generate_test_data      Generate simulated data for testing
+plot.scm_spillover      Plot method for scm_spillover objects
+plot_all                Generate all plots for SCM analysis
+print.scm_spillover     Print method for scm_spillover objects
+run_scm_spillover       Run Complete SCM Analysis with Spillover
+                        Effects
+safe_solve              Safe matrix inversion with regularization
+scm                     Basic SCM function for single unit
+scm_batch               Batch SCM for all units
+sp_andrews_spillover    Test for spillover effects
+sp_andrews_te           Andrews test for treatment effects
+sp_estimation           Spillover-adjusted SCM estimation
+summary.scm_spillover   Summary method for scm_spillover objects
+vanilla_scm             Standard SCM without spillovers

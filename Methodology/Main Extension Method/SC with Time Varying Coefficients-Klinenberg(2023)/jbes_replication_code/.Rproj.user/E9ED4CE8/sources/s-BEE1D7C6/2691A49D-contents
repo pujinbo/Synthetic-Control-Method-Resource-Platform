@@ -1,0 +1,72 @@
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  "berryFunctions", # for warnings
+  "Boom", # For rmvn (multivariate normal simulation)
+  "here",
+  "matrixStats", #rowQuantiles
+  "MASS",
+  "statmod", #rinvgauss
+  "tidyverse" #Because always use tidyverse
+  
+)
+source(paste0(here::here(),"/model/helper_functions/mod_Scaled.R"))
+
+# t_0 is the year in which the treatment occurred. So if there was pretreatment from
+  # 2000-2002, t_0=3.
+
+tvp_predict <- function(x,
+                        y,
+                        max.steps,
+                        burnin,
+                        t_0,
+                        t=length(out),
+                        thin = 5,
+                        pjj=10e7,
+                        sigma_shape = 1,
+                        sigma_rate  = 1,
+                        type="bl") {
+  if(!(type %in% c("hs","bl"))){
+    stop("Wrong type. Specify horseshoe (hs) or Bayesian Lasso (bl)")
+  }
+  hold_y <- x
+  out <- y
+  a <-
+    horse_tvp(hold_y[1:t_0, ], 
+              out[1:t_0],
+              max.steps, 
+              burnin, 
+              sigma_shape=sigma_shape,
+              sigma_rate=sigma_rate,
+              type = type)
+  y.pred <- rep(NA, t)
+  scaled.x <-
+    (cbind(1, sweep(
+      sweep(as.matrix(hold_y), a$std.mean, MARGIN = 2, `-`),
+      a$std.var,
+      MARGIN = 2,
+      `/`
+    )))
+  # Extend beta.tilde
+  
+  for (i in 1:dim(a$beta)[1]) {
+    beta.tilde.pred <- a$beta.tilde[, , i]
+    for (k in (t_0 + 1):t) {
+      beta.tilde.pred <- rbind(beta.tilde.pred,
+                               beta.tilde.pred[(k - 1), ] + rnorm(dim(a$beta.tilde)[2], 0, 1))
+    }
+    y.pred <- cbind(y.pred,
+                    scaled.x %*% a$beta[i, ] + (scaled.x * beta.tilde.pred) %*%
+                      a$sqrtthet[i, ])
+  }
+  y.pred <-
+    y.pred[, -1]
+  print(paste("Prior choice:",type, sep=" "))
+  l <- list("pred"    = y.pred,
+            "beta"    = a$beta,
+            "tau2"    = a$tau2,
+            "sqrtthet"= a$sqrtthet,
+            "xi2"     = a$xi2
+  )
+  return(l)
+}
+  

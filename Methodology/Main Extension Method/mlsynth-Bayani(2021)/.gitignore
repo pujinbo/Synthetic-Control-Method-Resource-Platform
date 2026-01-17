@@ -1,0 +1,16 @@
+# Ignore build directories
+build/
+dist/
+
+# Ignore egg-info
+*.egg-info
+
+*.tar.gz
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+
+# Coverage files
+.coverage
+coverage.xml

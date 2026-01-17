@@ -1,0 +1,23 @@
+Package: scmSpillover
+Type: Package
+Title: Synthetic Control Method with Spillover Effects
+Version: 0.1.1
+Author: Jianfei Cao <j.cao@northeastern.edu>
+Maintainer: Zhanchao Fu <fuzhanchao2001@gmail.com>
+Description: A general-purpose implementation of synthetic control methods 
+    that accounts for potential spillover effects between units. Based on 
+    the methodology of Cao and Dowd (2019).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    limSolve,
+    MASS,
+    ggplot2,
+    stats
+Suggests: 
+    testthat (>= 3.0.0)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+Config/testthat/edition: 3

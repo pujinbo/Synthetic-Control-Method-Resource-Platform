@@ -1,0 +1,7 @@
+^data-raw$
+^Meta$
+^doc$
+^\.travis\.yml$
+^pkg.Rproj$
+figure$
+cache$

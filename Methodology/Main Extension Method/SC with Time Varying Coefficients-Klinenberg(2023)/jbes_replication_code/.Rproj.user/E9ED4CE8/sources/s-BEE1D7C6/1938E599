@@ -1,0 +1,26 @@
+{
+    "id": "1938E599",
+    "path": "~/OneDrive/Documents/school_stuff/UCSB/research_papers/sc_proposal/klinenberg_replication/simulations/brodersen_sim/brodersen_sim_tvp_parallel.R",
+    "project_path": "simulations/brodersen_sim/brodersen_sim_tvp_parallel.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1649273813155.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "225,14",
+        "scrollLine": "221"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1649273956,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1649273956605,
+    "read_only": false,
+    "read_only_alternatives": []
+}

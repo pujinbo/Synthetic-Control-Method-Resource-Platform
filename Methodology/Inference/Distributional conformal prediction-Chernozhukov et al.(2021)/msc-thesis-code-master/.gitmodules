@@ -1,0 +1,9 @@
+[submodule "external/Replication_DCP"]
+	path = external/Replication_DCP
+	url = ssh://git@github.com/Herbsi/Replication_DCP
+[submodule "external/isodistrreg"]
+	path = external/isodistrreg
+	url = ssh://git@github.com/AlexanderHenzi/isodistrreg
+[submodule "external/cqr"]
+	path = external/cqr
+	url = ssh://git@github.com/yromano/cqr

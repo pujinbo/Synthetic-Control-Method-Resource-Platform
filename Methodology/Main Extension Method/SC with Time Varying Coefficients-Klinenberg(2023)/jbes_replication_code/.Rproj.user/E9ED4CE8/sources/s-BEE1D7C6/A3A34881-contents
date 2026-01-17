@@ -1,0 +1,13 @@
+The following files are:
+
+1-SC.r: Create the synthetic control counterfactual estimate of California.
+
+2-CI.r: Create the Causal Impact counterfactual estimate of California.
+
+3-BLTVP.r: Create the BL-TVP counterfactual estimate of California.
+
+ca_comp.rdata: The image with the data.
+
+ca_plots.R: Creates figures 3 and 4
+
+ca_table.R: Create table 5
