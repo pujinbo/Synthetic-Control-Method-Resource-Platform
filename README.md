@@ -1,8 +1,6 @@
-# Synthetic-Control-Method-Resource-Platform
+# 合成控制法资源平台（Synthetic-Control-Method-Resource-Platform）
 
-# synthetic-code 仓库简介（中/英）
-
-## 中文简介
+## 简介
 本仓库聚焦**合成控制法（Synthetic Control Method, SCM）** 及其拓展方法的代码实现与应用指南，旨在为因果推断领域的研究者、学生及实务工作者提供一站式技术资源。  
 
 仓库核心内容涵盖三部分：  
@@ -13,7 +11,7 @@
 代码以Python 和 R 为主，兼顾易用性与可扩展性，可直接适配不同研究场景的数据格式。欢迎星标（Star）关注更新，也期待通过Issues或Pull Request交流改进建议，共同推动SCM方法的实践落地。
 
 
-## English Introduction
+## Introduction
 This repository focuses on the code implementation and application guidelines of the **Synthetic Control Method (SCM)** and its extensions, aiming to provide a one-stop technical resource for researchers, students, and practitioners in the field of causal inference.  
 
 The core content of the repository includes three parts:  
